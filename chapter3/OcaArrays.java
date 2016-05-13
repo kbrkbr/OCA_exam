@@ -5,8 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class OcaArrays {
+
+    public static void perfomSOmething(LocalDate start, LocalDate end, Period period) {
+	
+	
+	while(start.isBefore(end)) {
+	    System.out.println(start);
+	    start = start.plus(period);
+	}
+	
+    }
+    
     public static void main(String[] args) {
 
 	int[] numbers = new int[3];
@@ -85,11 +98,50 @@ public class OcaArrays {
 
 	Collections.sort(numbers1);
 	System.out.println(numbers1);
+	
+	System.out.println("-----------------------------------------");
 
 	// Date and time
 	System.out.println(LocalDate.now());
 	System.out.println(LocalTime.now());
 	System.out.println(LocalDateTime.now());
+	
+	// !private constructors!
+	LocalDate date1 = LocalDate.now();
+	LocalDate date2 = LocalDate.now().plusMonths(2);
+	
+	LocalDateTime datetime1 = LocalDateTime.now();
+	System.out.println(datetime1);
+	
+	// date and time classes immutable!
+	date1 = date1.plusMonths(1);
+	// plusYears, plusMonths, ..., minusWeeks, ... 
+	System.out.println("-------------------");
+	Period p1 = Period.ofDays(2);
+	perfomSOmething(date1, date2, p1);
+	System.out.println();
+	System.out.println(date1);
+	
+	System.out.println("-------------------");
+	
+	// formatting
+	System.out.println(date1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
+	System.out.println(date1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
+	System.out.println(date1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
+	System.out.println(date1.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
+	
+	System.out.println(datetime1.format(DateTimeFormatter.ofPattern("yyyy_MM_dd // hh:mm")));
+	
+	StringBuilder sb1 = new StringBuilder();
+	String ccc = "";
+	ccc += false;
+	
+	String java = "";
+	
+	char[] c = new char[2];
+	
+	ArrayList bb = new ArrayList();
+	
 
     }
 }
