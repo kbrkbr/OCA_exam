@@ -3,6 +3,9 @@ package chapter3;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+import java.time.*;
+
 
 public class ArraysOca {
     public static void main(String[] args) {
@@ -54,9 +57,47 @@ public class ArraysOca {
 
 
         // Arraylist
-        ArrayList listi0 = new ArrayList();
-        List<String> listi = new ArrayList<>();
+        ArrayList<String> listi = new ArrayList<String>();
+
+        listi.add("blub");
+        listi.add("blob");
+
+        System.out.println(Arrays.toString(listi.toArray()));
+
+        listi.set(0, "hello");
+
+        System.out.println(Arrays.toString(listi.toArray()));
+
+        // Wrapper classes 
+        int primitive = Integer.parseInt("123");
+        Integer wrapper = Integer.valueOf("123");
+
+        // Autoboxing
+        List<String> listi0 = new ArrayList<String>();
+        String[] strArray = listi0.toArray(new String[listi0.size()]);
+
+        // asList returns a fixed size list, no structural operations allowed
+        List<String> fixedSizeList = Arrays.asList(strArray);
+
+
+        // Sorting
+        List<Integer> numbers1 = new ArrayList<Integer>();
+        numbers1.add(99);
+        numbers1.add(59);
+        numbers1.add(999);
+        numbers1.add(919);
+
+        Collections.sort(numbers1);
+        System.out.println(numbers1);
+
+
+        // Date and time
+        System.out.println(LocalDate.now());
+        System.out.println(LocalTime.now());
+        System.out.println(LocalDateTime.now());
+
 
         
+
     }
 }
