@@ -44,7 +44,58 @@ public class OcaMethodsAndEncapsulation {
 	// get and set a copy to get true immutability
 	
 	// lambdas
-	//
+	// () -> true;
+	// a -> a.startsWith("a");
+	// (a, b) -> a.startsWith(b);
+	// (String a, String b)-> a.startsWith(b);
+	// (String a)-> a.startsWith("b");
+	// (a) -> {return true;}
+	
+	// predicates
+	// public Interface Predicate<T> {
+	// 	boolean test(T t);
+	// }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
     }
 
