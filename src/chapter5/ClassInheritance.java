@@ -50,22 +50,29 @@ public class ClassInheritance {
     // polymorphic parameters
     // method parameter is superclass, specialisation of that class is passed
 
-
-
     public static void main(String[] args) {
         System.out.println("Hi there");
         Lion lion = new Lion(3);
         lion.roar();
         TestStatic.testThis();
-
-
-
     }
 }
 
 interface TestStatic {
     static void testThis() {
         System.out.println("oh hi");
+    }
+}
+
+class rodent {
+    protected static Integer chew() throws Exception {
+        return 0;
+    }
+}
+
+class Beaver extends rodent {
+    public static Integer chew() throws RuntimeException {
+        return 0;
     }
 }
 
